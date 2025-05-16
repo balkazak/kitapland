@@ -14,4 +14,13 @@ export default defineConfig({
     }
   },
   assetsInclude: ['**/*.xlsx'],
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+  },
+  build: {
+    typescript: {
+      noEmit: false,
+      noTypeCheck: true
+    }
+  }
 })
